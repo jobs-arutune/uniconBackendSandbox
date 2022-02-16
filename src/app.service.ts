@@ -1,51 +1,105 @@
 import { Injectable } from '@nestjs/common';
-import { Entity } from './entities/engine/entity';
-import { Feature } from './entities/engine/feature';
-import { Attribute } from './entities/engine/attribute';
 import {
-  CompareOperator,
-  OperatorAbstract,
-  OperatorValues,
-} from './entities/engine/operator';
-import { Amount } from './entities/engine/amount';
-import { Measurement } from './entities/engine/measurement';
-import { Property } from './entities/engine/property';
+  DataNotation,
+  RuleFactory,
+  RuleNotation,
+  RuleOrchestrator
+} from './entities/engine/rule';
+import { OperatorTypes, OperatorValues } from './entities/engine/operator';
+import {
+  ProviderDataModel,
+  ProviderDataTransformer,
+  ProviderNotation,
+} from './entities/engine/provider';
+import { getProviderByIdAndSession } from '../data/db-mocks/provider';
+import { saveRule, getRuleById } from '../data/db-mocks/rule';
+
+export const CURRENT_SESSION_ID = 341235234;
+export const OLD_SESSION = 341231111;
 
 @Injectable()
 export class AppService {
-  async fillData(): Promise<boolean> {
-    debugger;
-    return false;
+  private ruleOrchestratorCurrentSession: RuleOrchestrator;
+  private ruleId: number;
+  constructor() {}
+
+  async init() {
+    const providersCurrentSession = [
+      await getProviderByIdAndSession(1, CURRENT_SESSION_ID),
+      await getProviderByIdAndSession(2, CURRENT_SESSION_ID),
+    ];
+    // 1. Инициализация движка: создаем версии провайдеров для ETL и тд
+    this.ruleOrchestratorCurrentSession = new RuleOrchestrator(
+      CURRENT_SESSION_ID,
+      providersCurrentSession.map(
+        (providerNotation) => new ProviderDataModel(providerNotation),
+      ),
+      providersCurrentSession.map(
+        (providerNotation) => new ProviderDataTransformer(),
+      ),
+    );
   }
 
-  getHello(): string/*Promise<string>*/ {
-    return ''
-    // const feature = this.getFeatures()[0];
-    // await feature.test();
-    // return feature.toString();
+  async ruleCreate() {
+    // 2. Создаем правило:
+    // this comes from UI,
+    // "Сумма арбитражных дел в качестве ответчика не более 20% от выручки"
+    // ATTENTION: на данном этапе мы не зависим от сесси, провайдера и тд!
+    const ruleNotation: RuleNotation = {
+      firstAttribute: 3,
+      operator: OperatorValues.lessThan,
+      secondAttribute: {
+        firstAttribute: 4,
+        operator: OperatorValues.percent,
+        secondAttribute: 5,
+      },
+    };
+    // making request to db here...data as it comes from our db (attributes table):
+    this.ruleId = await saveRule(ruleNotation);
+    return this.ruleId;
   }
 
-  /*getFeatures(): Feature[] {
-    return this.features;
-  }*/
-  async addEntities() {
-    /*const feature1 = new Feature(
-      { inn: 7703270067 },
-      [
-        new Attribute(
-          new Property('сумма'),
-          new Entity('арбитражных дел в качестве ответчика'),
-          's2001',
-        ),
-        new CompareOperator(OperatorValues.noMoreThan),
-        [
-          new PercentOperator(20),
-          new Attribute(new Property('сумма'), new Entity('выручка'), 's6004'),
-        ]
-    ]);
-    await feature1.init();
-    this.features.push(feature1);*/
+  async ruleCheck(): Promise<string> {
+    if (!this.ruleId) {
+      this.ruleId = await this.ruleCreate();
+    }
+    // 3. проверка для конкретного ИНН в текущей сессии (т.е. провайдеров не меняем):
+    const dataNotation: DataNotation = {
+      inn: 7703270067,
+      sessionId: CURRENT_SESSION_ID,
+    };
+    const { notation: ruleNotation } = await getRuleById(this.ruleId);
+    const ruleClass = await RuleFactory.create(ruleNotation, dataNotation);
+    await RuleFactory.fetch(ruleClass);
+
+    const res = ruleClass.calculate();
+    // const res = this.ruleOrchestratorCurrentSession.checkRule(ruleClass);
+    return res.toString();
   }
 
-  features: Feature[] = [];
+  /* async ruleCheckHistorical(sessionId: number = OLD_SESSION) {
+    // 4. проверка исторического значения правила для заданной ИНН и сессии:
+    // предполагаем, что поменялся АПИ
+    const dataNotation: DataNotation = {
+      inn: 7703270067,
+      sessionId,
+    };
+    const { notation: ruleNotation } = await getRuleById(this.ruleId);
+    const ruleClass = await RuleFactory.create(ruleNotation, dataNotation);
+
+    const providers: ProviderNotation[] = [
+      await getProviderByIdAndSession(1, dataNotation.sessionId),
+      await getProviderByIdAndSession(2, dataNotation.sessionId),
+    ];
+    const ruleOrchestratorOldSession = new RuleOrchestrator(
+      dataNotation.sessionId,
+      providers.map(
+        (providerNotation) => new ProviderDataModel(providerNotation),
+      ),
+      providers.map((providerNotation) => new ProviderDataTransformer()),
+    );
+
+    const res = ruleOrchestratorOldSession.checkRule(ruleClass);
+    return res;
+  } */
 }

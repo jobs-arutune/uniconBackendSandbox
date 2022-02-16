@@ -5,15 +5,14 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get('/hello')
-  getHello(): string/*Promise<string>*/ {
-    return 'asf'
-    // return this.appService.getHello();
+  @Get('/rule/create')
+  async ruleCreate() {
+    const ruleId = this.appService.ruleCreate();
+    return ruleId;
   }
 
-  @Get()
-  async fillData(): Promise<boolean> /*Promise<string>*/ {
-    const a = await this.appService.fillData();
-    return a;
+  @Get('/rule/check')
+  async ruleCheck(): Promise<string> {
+    return this.appService.ruleCheck();
   }
 }

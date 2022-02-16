@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JavaScript-modules-diagram</ID>
+  <OriginalElement>C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine</OriginalElement>
+  <nodes>
+    <node x="353.375" y="229.0">C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/amount.ts#Amount#46;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/amount.ts#Measurement#9;</node>
+    <node x="344.5" y="690.5">C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/data/contur/analytics.ts</node>
+    <node x="175.51785714285717" y="394.0">C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#AnalyticsJson#94;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#Attribute#211;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#AttributeValue#1013;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#Entity#48;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#EntityValue#56;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#OperatorAbstract#156;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#OperatorValues#174;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#Property#9;</node>
+    <node x="7.5" y="656.0">C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/entity.ts#Entity#0;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/entity.ts#EntityValue#138;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/entity.ts#EntityValueType#193;</node>
+    <node x="225.0" y="0.0">C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/feature.ts#Amount#826;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/feature.ts#Attribute#677;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/feature.ts#Measurement#781;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/feature.ts#OperatorAbstract#718;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/feature.ts#OperatorResult#736;</node>
+    <node x="349.51785714285717" y="471.0">C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/measurement.ts#Measurement#0;</node>
+    <node x="0.0" y="196.0">C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/operator.ts#AttributeValue#9;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/operator.ts#EntityValueType#55;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/operator.ts#OperatorAbstract#91;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/operator.ts#OperatorResult#1847;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/operator.ts#OperatorValues#1536;</node>
+    <node x="168.5" y="678.0">C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/property.ts#Property#0;</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/feature.ts#Amount#826;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/feature.ts#Attribute#677;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/feature.ts#Measurement#781;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/feature.ts#OperatorAbstract#718;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/feature.ts#OperatorResult#736;" target="C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/measurement.ts#Measurement#0;" relationship="">
+      <point x="0.0" y="72.0" />
+      <point x="299.0" y="170.0" />
+      <point x="513.875" y="170.0" />
+      <point x="513.875" y="367.0" />
+      <point x="443.01785714285717" y="367.0" />
+      <point x="0.0" y="-28.0" />
+    </edge>
+    <edge source="C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/amount.ts#Amount#46;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/amount.ts#Measurement#9;" target="C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/measurement.ts#Measurement#0;" relationship="">
+      <point x="0.0" y="39.0" />
+      <point x="428.375" y="367.0" />
+      <point x="443.01785714285717" y="367.0" />
+      <point x="0.0" y="-28.0" />
+    </edge>
+    <edge source="C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#AnalyticsJson#94;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#Attribute#211;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#AttributeValue#1013;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#Entity#48;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#EntityValue#56;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#OperatorAbstract#156;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#OperatorValues#174;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#Property#9;" target="C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/entity.ts#Entity#0;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/entity.ts#EntityValue#138;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/entity.ts#EntityValueType#193;" relationship="">
+      <point x="0.0" y="105.0" />
+      <point x="252.51785714285717" y="625.0" />
+      <point x="78.0" y="625.0" />
+      <point x="0.0" y="-50.0" />
+    </edge>
+    <edge source="C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/operator.ts#AttributeValue#9;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/operator.ts#EntityValueType#55;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/operator.ts#OperatorAbstract#91;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/operator.ts#OperatorResult#1847;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/operator.ts#OperatorValues#1536;" target="C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/entity.ts#Entity#0;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/entity.ts#EntityValue#138;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/entity.ts#EntityValueType#193;" relationship="">
+      <point x="0.0" y="72.0" />
+      <point x="0.0" y="-50.0" />
+    </edge>
+    <edge source="C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#AnalyticsJson#94;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#Attribute#211;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#AttributeValue#1013;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#Entity#48;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#EntityValue#56;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#OperatorAbstract#156;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#OperatorValues#174;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#Property#9;" target="C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/operator.ts#AttributeValue#9;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/operator.ts#EntityValueType#55;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/operator.ts#OperatorAbstract#91;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/operator.ts#OperatorResult#1847;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/operator.ts#OperatorValues#1536;" relationship="">
+      <point x="0.0" y="-105.0" />
+      <point x="252.51785714285717" y="367.0" />
+      <point x="78.0" y="367.0" />
+      <point x="0.0" y="72.0" />
+    </edge>
+    <edge source="C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/operator.ts#AttributeValue#9;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/operator.ts#EntityValueType#55;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/operator.ts#OperatorAbstract#91;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/operator.ts#OperatorResult#1847;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/operator.ts#OperatorValues#1536;" target="C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#AnalyticsJson#94;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#Attribute#211;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#AttributeValue#1013;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#Entity#48;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#EntityValue#56;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#OperatorAbstract#156;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#OperatorValues#174;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#Property#9;" relationship="">
+      <point x="0.0" y="72.0" />
+      <point x="78.0" y="367.0" />
+      <point x="252.51785714285717" y="367.0" />
+      <point x="0.0" y="-105.0" />
+    </edge>
+    <edge source="C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/feature.ts#Amount#826;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/feature.ts#Attribute#677;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/feature.ts#Measurement#781;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/feature.ts#OperatorAbstract#718;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/feature.ts#OperatorResult#736;" target="C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/operator.ts#AttributeValue#9;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/operator.ts#EntityValueType#55;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/operator.ts#OperatorAbstract#91;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/operator.ts#OperatorResult#1847;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/operator.ts#OperatorValues#1536;" relationship="">
+      <point x="0.0" y="72.0" />
+      <point x="299.0" y="170.0" />
+      <point x="78.0" y="170.0" />
+      <point x="0.0" y="-72.0" />
+    </edge>
+    <edge source="C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#AnalyticsJson#94;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#Attribute#211;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#AttributeValue#1013;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#Entity#48;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#EntityValue#56;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#OperatorAbstract#156;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#OperatorValues#174;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#Property#9;" target="C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/data/contur/analytics.ts" relationship="">
+      <point x="0.0" y="105.0" />
+      <point x="252.51785714285717" y="635.0" />
+      <point x="420.0" y="635.0" />
+      <point x="0.0" y="-15.5" />
+    </edge>
+    <edge source="C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/feature.ts#Amount#826;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/feature.ts#Attribute#677;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/feature.ts#Measurement#781;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/feature.ts#OperatorAbstract#718;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/feature.ts#OperatorResult#736;" target="C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/amount.ts#Amount#46;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/amount.ts#Measurement#9;" relationship="">
+      <point x="0.0" y="72.0" />
+      <point x="299.0" y="170.0" />
+      <point x="428.375" y="170.0" />
+      <point x="0.0" y="-39.0" />
+    </edge>
+    <edge source="C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/feature.ts#Amount#826;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/feature.ts#Attribute#677;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/feature.ts#Measurement#781;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/feature.ts#OperatorAbstract#718;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/feature.ts#OperatorResult#736;" target="C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#AnalyticsJson#94;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#Attribute#211;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#AttributeValue#1013;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#Entity#48;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#EntityValue#56;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#OperatorAbstract#156;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#OperatorValues#174;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#Property#9;" relationship="">
+      <point x="0.0" y="72.0" />
+      <point x="299.0" y="170.0" />
+      <point x="252.51785714285717" y="170.0" />
+      <point x="0.0" y="-105.0" />
+    </edge>
+    <edge source="C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#AnalyticsJson#94;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#Attribute#211;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#AttributeValue#1013;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#Entity#48;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#EntityValue#56;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#OperatorAbstract#156;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#OperatorValues#174;C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/attribute.ts#Property#9;" target="C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/src/entities/engine/property.ts#Property#0;" relationship="">
+      <point x="0.0" y="105.0" />
+      <point x="252.51785714285717" y="635.0" />
+      <point x="246.5" y="635.0" />
+      <point x="0.0" y="-28.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.8621134020618557" showDependencies="false" x="268.5" y="378.0" />
+  <SelectedNodes>
+    <node>C:/Users/arutyunyan_aa/PROJECTS/CCompliance/my-nest-project/data/contur/analytics.ts</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>All</Category>
+  </Categories>
+  <VISIBILITY>Details</VISIBILITY>
+</Diagram>
+
