@@ -90,6 +90,30 @@ export class PercentOperator extends OperatorAbstract {
   }
 }
 
+export class AndOperator extends OperatorAbstract {
+  constructor(value: OperatorValue) {
+    super(value);
+  }
+
+  apply(
+    attributeValue1: AttributeValueClass,
+    attributeValue2: AttributeValueClass,
+  ): AttributeValueClass {
+    this.applyBase(attributeValue1, attributeValue2);
+
+    let res = (attributeValue1.getValue() as boolean) && (attributeValue2.getValue() as boolean);
+    return new AttributeValueClass(res, AttributeValueTypes.truthiness);
+  }
+  isUnary = () => false;
+
+  protected isValid = (attributeValue: AttributeValueClass): boolean =>
+    attributeValue.type === AttributeValueTypes.truthiness;
+
+  toString() {
+    return this.text;
+  }
+}
+
 export interface OperatorValue {
   name: string;
   value: string;
@@ -105,6 +129,8 @@ export const OperatorValues = {
   // notEqual: { value: '!=', text: 'не равно' },
 
   percent: { name: 'percent', value: '%', text: '%' },
+  // LOGICAL binary : AND/OR
+  and: { name: 'and', value: '&&', text: 'и' },
 };
 
 // export type OperatorResult = boolean | string | number;
@@ -112,14 +138,17 @@ export const OperatorValues = {
 export enum OperatorTypes {
   compare,
   percent,
+  and,
 }
 
 export const OperatorClassesMapper = {
   [OperatorTypes.compare]: CompareOperator,
   [OperatorTypes.percent]: PercentOperator,
+  [OperatorTypes.and]: AndOperator,
 };
 
 export const OperatorValueTypesMapper = {
   [OperatorValues.lessThan.name]: OperatorTypes.compare,
   [OperatorValues.percent.name]: OperatorTypes.percent,
+  [OperatorValues.and.name]: OperatorTypes.and,
 };

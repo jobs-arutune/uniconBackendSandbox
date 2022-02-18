@@ -10,9 +10,9 @@ export async function getAttributeByIdAndSession(
   return new Promise((resolve) => {
     // find(where attributeId == [attributeId] && sessionId == [sessionId]
     setTimeout(async () => {
-      const version = await getVersionForSession(CURRENT_SESSION_ID, attributeId);
-      if (version === 1) {
-        if (attributeId === 3) {// todays session
+      const version = await getVersionForSession(sessionId, attributeId);
+      if (version === 1) {// today's session
+        if (attributeId === 3) {
           resolve({
             attributeId,
             sessionId,
@@ -52,6 +52,20 @@ export async function getAttributeByIdAndSession(
             // providerId: 1,
             // apiId: 2,
             // providerVersion: 1,
+          });
+        } else if (attributeId === 6) {
+          resolve({
+            attributeId,
+            sessionId,
+            type: AttributeTypes.external,
+            valueType: AttributeValueTypes.amount,
+            propertyText: 'количество',
+            entityText: 'невыигранных дел в качестве истца (за 3 года)',
+            providerCode: 'q2021',
+            providerId: 1,
+            apiId: 'analytics',
+            apiJsonPath: '[0]/analytics',
+            providerVersion: 1,
           });
         }
       } else if (version === 2) {

@@ -15,4 +15,9 @@ export class AppController {
   async ruleCheck(): Promise<string> {
     return this.appService.ruleCheck();
   }
+
+  @Get('/rule/check-historical')
+  async ruleCheckHistorical(): Promise<string> {
+    return this.appService.ruleCheckHistorical();
+  }
 }

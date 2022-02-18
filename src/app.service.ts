@@ -19,12 +19,12 @@ export const OLD_SESSION = 341231111;
 
 @Injectable()
 export class AppService {
-  private ruleOrchestratorCurrentSession: RuleOrchestrator;
+  // private ruleOrchestratorCurrentSession: RuleOrchestrator;
   private ruleId: number;
   constructor() {}
 
   async init() {
-    const providersCurrentSession = [
+    /*const providersCurrentSession = [
       await getProviderByIdAndSession(1, CURRENT_SESSION_ID),
       await getProviderByIdAndSession(2, CURRENT_SESSION_ID),
     ];
@@ -37,15 +37,37 @@ export class AppService {
       providersCurrentSession.map(
         (providerNotation) => new ProviderDataTransformer(),
       ),
-    );
+    );*/
   }
 
   async ruleCreate() {
     // 2. Создаем правило:
     // this comes from UI,
-    // "Сумма арбитражных дел в качестве ответчика не более 20% от выручки"
     // ATTENTION: на данном этапе мы не зависим от сесси, провайдера и тд!
+
+    // ниже я пробую разные правила
+
+    // "Сумма арбитражных дел в качестве ответчика не более 20% от выручки и количество невыигранных дел в качестве истца не более 20"
+    //
     const ruleNotation: RuleNotation = {
+      firstAttribute: {
+        firstAttribute: 3,
+        operator: OperatorValues.lessThan,
+        secondAttribute: {
+          firstAttribute: 4,
+          operator: OperatorValues.percent,
+          secondAttribute: 5,
+        },
+      },
+      operator: OperatorValues.and,
+      secondAttribute: {
+        firstAttribute: 6,
+        operator: OperatorValues.lessThan,
+        secondAttribute: 5,
+      },
+    };
+    // "Сумма арбитражных дел в качестве ответчика не более 20% от выручки" - YES
+    /* const ruleNotation: RuleNotation = {
       firstAttribute: 3,
       operator: OperatorValues.lessThan,
       secondAttribute: {
@@ -53,7 +75,7 @@ export class AppService {
         operator: OperatorValues.percent,
         secondAttribute: 5,
       },
-    };
+    }; */
     // making request to db here...data as it comes from our db (attributes table):
     this.ruleId = await saveRule(ruleNotation);
     return this.ruleId;
@@ -68,12 +90,30 @@ export class AppService {
       inn: 7703270067,
       sessionId: CURRENT_SESSION_ID,
     };
-    const { notation: ruleNotation } = await getRuleById(this.ruleId);
+    const ruleNotation = await getRuleById(this.ruleId);
     const ruleClass = await RuleFactory.create(ruleNotation, dataNotation);
     await RuleFactory.fetch(ruleClass);
 
     const res = ruleClass.calculate();
-    // const res = this.ruleOrchestratorCurrentSession.checkRule(ruleClass);
+    return res.toString();
+  }
+
+  async ruleCheckHistorical(): Promise<string> {
+    // 4. проверка исторического значения правила для заданной ИНН и сессии:
+    // предполагаем, что поменялся АПИ
+    if (!this.ruleId) {
+      this.ruleId = await this.ruleCreate();
+    }
+    // 3. проверка для конкретного ИНН в текущей сессии (т.е. провайдеров не меняем):
+    const dataNotation: DataNotation = {
+      inn: 7703270067,
+      sessionId: OLD_SESSION,
+    };
+    const ruleNotation = await getRuleById(this.ruleId);
+    const ruleClass = await RuleFactory.create(ruleNotation, dataNotation);
+    await RuleFactory.fetch(ruleClass);
+
+    const res = ruleClass.calculate();
     return res.toString();
   }
 

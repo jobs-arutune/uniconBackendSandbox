@@ -111,6 +111,9 @@ export class RuleFactory {
     }
     const OperatorClass =
       OperatorClassesMapper[OperatorValueTypesMapper[rule.operator.name]];
+    if (!OperatorClass) {
+      throw new Error(`Operator ${rule.operator.name} is not supported yet!`);
+    }
     const ret: RuleClass = new RuleClass({
       firstAttribute: firstAttributeObject,
       operator: new OperatorClass(rule.operator),
